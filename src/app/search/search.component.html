@@ -1,0 +1,36 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="SENSAI"></Label>
+</ActionBar>
+
+<ScrollView>
+        <GridLayout class="community" rows="auto, auto, auto, auto, auto">
+            
+            <DockLayout row="0" class="community-band" width="80%" height="100px">
+                <Label class="text_middle" text="Our community"></Label>
+            </DockLayout>
+
+            <DockLayout row="1" col=0 class="community-sensai" width="100%" height="220px">
+                <Image id="sensai_picture" src="res://logosensai" width="450px"></Image>
+                <Label id="sensai_text" text="SensAI Community" (tap)="launch_sensai()"></Label>
+            </DockLayout>
+
+            <DockLayout row="2" id="container" class="community_stationf" width="100%" height="200px">
+                <Image id="stationf_picture" src="res://boxestationf"></Image>
+                <Label id="stationf_text" text="StationFightClub (StationF)" (tap)="launch_stationf()"></Label>
+            </DockLayout>
+
+            <DockLayout row="3" class="community-band" width="80%" height="100px">
+                <Label class="text_middle" text="Next event"></Label>
+            </DockLayout>
+
+            <StackLayout row="4">
+                <GridLayout *ngFor="let talk of list_talks" row="1" orientation="horizontal" width="100%" height="auto" rows="auto, auto" columns="auto, auto, 200">
+                    <Image row="0" col="0" class="talk_image" src="res://yama" width="20%"></Image>
+                    <Label row="1" col="0" class="talk_name" text="Yama Saraj"></Label>
+                    <Image row="0" col="1" class="talk_image" src="res://jan" width="22%"></Image>
+                    <Label row="1" col="1" class="talk_name" text="Jan De Bruijn"></Label>
+                    <Label row="0" col="2" id="talk_text" [text]="talk.title" textWrap="true"></Label> 
+                </GridLayout>
+            </StackLayout>
+        </GridLayout>            
+</ScrollView>

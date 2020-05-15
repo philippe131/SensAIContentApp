@@ -1,0 +1,18 @@
+<ActionBar class="action-bar">
+    <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+    <Label class="action-bar-title" [text]="video.title"></Label>
+</ActionBar>
+
+<ScrollView>
+    <StackLayout>
+
+        <Label class="title" [text]="video.title" textWrap="true"></Label>
+        
+        <StackLayout *ngFor="let section of video.text">
+            <Label class="section" [text]="section" textWrap="true"></Label>
+        </StackLayout>
+        
+        <Image class="picture" [src]="video.url_photo" height="200" (tap)=onTapSource(video.url_video)></Image>
+
+    </StackLayout>
+</ScrollView>

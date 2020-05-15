@@ -1,0 +1,24 @@
+<ActionBar class="action-bar">
+    <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+    <Label class="action-bar-title" [text]="article.title"></Label>
+</ActionBar>
+
+<ScrollView>
+    <StackLayout>
+
+        <Label class="title" [text]="article.title" textWrap="true"></Label>
+        <Label class="date" [text]="article.date"></Label>
+        <Label class="subtitle" [text]="article.sub_title" textWrap="true"></Label>
+        <Image class="picture" [src]="article.picture[1]" height="200"></Image>
+        <Label class="picture_source" [text]="article.picture[0]" textWrap="true"></Label>
+        
+        <StackLayout *ngFor="let section of article.text">
+            <Label class="section" [text]="section" textWrap="true"></Label>
+        </StackLayout>
+        
+        <StackLayout *ngFor="let source of article.source">
+            <Label class="source" text="Source Here" (tap)="onTapSource(source)"></Label>
+        </StackLayout>
+
+    </StackLayout>
+</ScrollView>

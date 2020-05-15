@@ -1,0 +1,10 @@
+{
+  "main": "main.js",
+  "nativescript": {
+    "id": "org.nativescript.SensAI",
+    "android": {
+      "v8Flags": "--expose_gc",
+      "markingMode": "none"
+      }
+  }
+}

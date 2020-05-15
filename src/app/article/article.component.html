@@ -1,0 +1,23 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="SENSAI"></Label>
+</ActionBar>
+
+<Label text="AAAAA"></Label>
+<GridLayout class="page">
+    <ListView [items]="list_article" class="list-group">
+        <ng-template let-item="item">
+            <!-- <AbsoluteLayout class="article_template">
+                <Image class="picture" [src]="item.picture[1]" width="40%" height="80"></Image>
+                <Label class="topic" left="160" top="10" [text]="item.topic"></Label>
+                <Label id="title" class="list-group-item" left="170" [nsRouterLink]="['../article', item.id]" [text]="item.title[0]" textWrap="true"></Label>
+                <Label id="title2" class="list-group-item" left="170" top="20" [text]="item.title[1]" textWrap="true"></Label>
+                <Label class="date" left="335" top="10" [text]="item.date"></Label>
+            </AbsoluteLayout> -->
+            
+            <StackLayout [items]="list_article" [nsRouterLink]="['../article', item.id]" class="list-group" orientation="horizontal">
+                <Image id="picture" class="list-group-item" [src]="item.picture[1]" width="150" height="80"></Image>
+                <Label id="title" class="list-group-item" [text]="item.title" textWrap="true"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>
